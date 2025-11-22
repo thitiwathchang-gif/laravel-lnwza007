@@ -18,3 +18,12 @@ Route::get('/news/{id}', [MovieNewsController::class, 'show'])->name('news.show'
 Route::get('/news-old', function () {
     return redirect()->route('news.index');
 })->name('news');
+
+use App\Http\Controllers\LicenseController;  
+use App\Http\Controllers\UserController; 
+use App\Http\Controllers\VehicleController; 
+
+
+Route::resource('license', LicenseController::class);
+Route::resource('user', UserController::class);
+Route::resource('vehicle', VehicleController::class);
